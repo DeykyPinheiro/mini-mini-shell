@@ -1,4 +1,4 @@
-#Nanoshell
+# Nanoshell
 
 a mini implementation of the minishell, a limited but very enriching project, it serves as the basis for other projects, as a basis for the shell and for a simple implementation of the pipe.
 
