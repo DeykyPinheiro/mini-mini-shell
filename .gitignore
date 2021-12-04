@@ -1,0 +1,5 @@
+nanoshell
+.vscode
+*.out
+*.a
+*.o

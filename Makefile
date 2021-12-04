@@ -1,6 +1,7 @@
 NAME  = nanoshell
 
-SOURCE = nanoshell.c
+SOURCE = cmd_handler.c exec_argc_piped.c exec_args.c init_shell.c nanoshell.c
+SOURCE += parse_space.c print_dir.c process_string.c take_input.c
 
 SOURCE_DIR = ./src
 OBJECT_DIR = ./obj
@@ -21,20 +22,27 @@ OBJ = $(addprefix $(OBJECT_DIR)/,$(SOURCE:%.c=%.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+
+$(OBJECT_DIR):
+	mkdir -p $(OBJECT_DIR)
+
+$(NAME): $(OBJECT_DIR) $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) $(LINKS) -o $(NAME)
 
 $(OBJECT_DIR)/%.o: $(SOURCE_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) obj
 
 fclean:	clean
 	$(RM) $(NAME)
 
-test:
-	$(OBJ)
+re: fclean all
+
+run:
+	./nanoshell
 
 
-# gcc main.c -lreadline
+# gcc main.c -lreadlin-lreadlinee
+# ctrl + shit + v -> abre o previw do readme.md

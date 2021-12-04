@@ -17,6 +17,19 @@
 
 #define clear() printf("\033[H\033[J")
 
+int ownCmdHandler(char** parsed);
+int parsePipe(char* str, char** strpiped);
+void execArgsPiped(char **parsed, char **parsedpipe);
+void execArgs(char **parsed);
+void init_shell();
+void openHelp();
+void	parseSpace(char* str, char** parsed);
+void	printDir();
+int processString(char* str, char** parsed, char** parsedpipe);
+int	takeInput(char *str);
+
+
+
 
 
 
